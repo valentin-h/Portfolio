@@ -1,0 +1,193 @@
+@mixin positions ($top:0, $right:$top, $bottom:$top, $left:$top){
+  top: #{ $top };
+  right: #{ $right };
+  bottom: #{ $bottom };
+  left: #{ $left };
+}
+
+@mixin top-left($top:0, $left:$top) {
+  top: #{ $top };
+  left: #{ $left };
+}
+
+@mixin top-right($top:0, $right:$top) {
+  top: #{ $top };
+  right: #{ $right };
+}
+
+@mixin bottom-left($bottom:0, $left:$bottom) {
+  bottom: #{ $bottom };
+  left: #{ $left };
+}
+
+@mixin bottom-right($bottom:0, $right:$bottom) {
+  bottom: #{ $bottom };
+  right: #{ $right };
+}
+
+@mixin w-h($width:100%, $height:$width) {
+  width: #{ $width };
+  height: #{ $height };
+}
+
+@mixin max-wh($width:none, $height:$width) {
+  max-width: #{ $width };
+  max-height: #{ $height };
+}
+
+@mixin min-wh($width:none, $height:$width) {
+  min-width: #{ $width };
+  min-height: #{ $height };
+}
+
+@mixin color-and-hover($color, $color-hover:$color) {
+  color: $color;
+
+  &:hover,
+  &:focus { color: $color-hover; }
+}
+
+@mixin bg-color-and-hover($color, $color-hover:$color) {
+  background-color: $color;
+
+  &:hover,
+  &:focus { background-color: $color-hover; }
+}
+
+@mixin border-and-hover($color, $color-hover:$color, $border-width: 1px) {
+  border: $border-width solid $color;
+
+  &:hover,
+  &:focus { border: $border-width solid $color-hover; }
+}
+
+@mixin build-flex-mixin($direction, $justify, $align){
+  display: flex;
+  flex-direction: #{ $direction };
+  justify-content: #{ $justify };
+  align-items: #{ $align };
+}
+
+@mixin flex-row-center {
+  @include build-flex-mixin('row', 'center', 'center');
+}
+
+@mixin flex-row-left {
+  @include build-flex-mixin('row', 'flex-start', 'center');
+}
+
+@mixin flex-row-left-stretch {
+  @include build-flex-mixin('row', 'flex-start', 'stretch');
+}
+
+@mixin flex-row-left-baseline {
+  @include build-flex-mixin('row', 'flex-start', 'baseline');
+}
+
+@mixin flex-row-right {
+  @include build-flex-mixin('row', 'flex-end', 'center');
+}
+
+@mixin flex-row-top {
+  @include build-flex-mixin('row', 'center', 'flex-start');
+}
+
+@mixin flex-row-bottom {
+  @include build-flex-mixin('row', 'flex-start', 'flex-end');
+}
+
+@mixin flex-row-bottom-around {
+  @include build-flex-mixin('row', 'space-around', 'flex-end');
+}
+
+@mixin flex-row-bottom-between {
+  @include build-flex-mixin('row', 'space-between', 'flex-end');
+}
+
+@mixin flex-row-bottom-center {
+  @include build-flex-mixin('row', 'center', 'flex-end');
+}
+
+@mixin flex-row-top-left {
+  @include build-flex-mixin('row', 'flex-start', 'flex-start');
+}
+
+@mixin flex-row-stretch {
+  @include build-flex-mixin('row', 'center', 'stretch');
+}
+
+@mixin flex-row-around {
+  @include build-flex-mixin('row', 'space-around', 'center');
+}
+
+@mixin flex-row-around-top {
+  @include build-flex-mixin('row', 'space-around', 'flex-start');
+}
+
+@mixin flex-row-between {
+  @include build-flex-mixin('row', 'space-between', 'center');
+}
+
+@mixin flex-row-between-stretch {
+  @include build-flex-mixin('row', 'space-between', 'stretch');
+}
+
+@mixin flex-row-between-start {
+  @include build-flex-mixin('row', 'space-between', 'flex-start');
+}
+
+@mixin flex-row-between-end {
+  @include build-flex-mixin('row', 'space-between', 'flex-end');
+}
+
+@mixin flex-row-reverse-left {
+  @include build-flex-mixin('row-reverse', 'flex-end', 'center');
+}
+
+@mixin flex-row-evenly-center {
+  @include build-flex-mixin('row', 'space-evenly', 'center');
+}
+
+@mixin flex-row-evenly-stretch {
+  @include build-flex-mixin('row', 'space-evenly', 'stretch');
+}
+
+@mixin flex-column-center {
+  @include build-flex-mixin('column', 'center', 'center');
+}
+
+@mixin flex-column-top {
+  @include build-flex-mixin('column', 'flex-start', 'center');
+}
+
+@mixin flex-column-bottom {
+  @include build-flex-mixin('column', 'flex-end', 'center');
+}
+
+@mixin flex-column-top-left {
+  @include build-flex-mixin('column', 'flex-start', 'flex-start');
+}
+
+@mixin flex-column-left {
+  @include build-flex-mixin('column', 'center', 'flex-start');
+}
+
+@mixin flex-column-right {
+  @include build-flex-mixin('column', 'center', 'flex-end');
+}
+
+@mixin flex-column-stretch {
+  @include build-flex-mixin('column', 'center', 'stretch');
+}
+
+@mixin flex-column-around {
+  @include build-flex-mixin('column', 'space-around', 'center');
+}
+
+@mixin flex-column-between {
+  @include build-flex-mixin('column', 'space-between', 'center');
+}
+
+@mixin flex-column-between-end {
+  @include build-flex-mixin('column', 'space-between', 'flex-end');
+}

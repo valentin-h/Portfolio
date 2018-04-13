@@ -1,7 +1,16 @@
-$test: #FF0;
+@import 'vendors/mixins/_utilities.scss';
+
+html {
+  @include w-h;
+}
 
 body {
+  @include w-h;
   margin: 0;
   padding: 0;
-  background-color: $test;
+}
+
+#root {
+  @include w-h;
+  @include flex-column-center;
 }
