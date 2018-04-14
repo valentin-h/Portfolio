@@ -1,5 +1,5 @@
-@import 'vendors/mixins/_variables.scss';
-@import 'vendors/mixins/_utilities.scss';
+@import 'vendors/_variables.scss';
+@import 'vendors/_mixins.scss';
 
 html {
   @include w-h(100%, 100vh);
@@ -20,5 +20,4 @@ body {
 .projects--container {
   position: relative;
   @include w-h($projects-container-side);
-  background-color: red;
 }
