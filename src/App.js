@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render() {
     const listProjects = projects.map((project) =>
-        <Project key={project.title} project={project}/>
+        <Project key={project.key} project={project}/>
     );
 
     return (

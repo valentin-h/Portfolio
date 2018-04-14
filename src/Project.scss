@@ -4,8 +4,8 @@
 .Project {
   position: absolute;
   @include w-h($project-side);
-  background-color: blue;
   transform: rotate(45deg);
+  overflow: hidden;
 
   &:nth-child(1) { @include top-left($position-first); }
   &:nth-child(2) { @include top-left($position-first, $position-second); }
@@ -19,4 +19,19 @@
   &:nth-child(10) { @include top-left($position-third, $position-first); }
   &:nth-child(11) { @include top-left($position-third, $position-second); }
   &:nth-child(12) { @include top-left($position-third); }
+}
+;
+.Project--image {
+  position: absolute;
+  @include top-left(-20%);
+  @include w-h(140%);
+  display: block;
+  transform: rotate(-45deg);
+  opacity: .2;
+  transition: opacity .2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
 }
