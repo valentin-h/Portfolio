@@ -82,18 +82,6 @@ const projects = [
   {
     display: false,
     highlights: false,
-    title: 'center',
-    type: '',
-    tools: '',
-    desc: '',
-    link: '',
-    imgkey: '',
-    background: 'url(images/works/am.jpg)',
-    // css: { width:$scope.losDim, height:$scope.losDim, top:$scope.sideMargin + $scope.losDiag + $scope.interMargin, left:$scope.sideMargin + ($scope.losDiag) + $scope.interMargin }
-  },
-  {
-    display: false,
-    highlights: false,
     title: 'Cours Toujours',
     type: '<b>Type :</b> Blog with e-commerce',
     tools: '<b>Tools :</b> Wordpress <b>•</b> WP E-commerce <b>•</b> jQuery',

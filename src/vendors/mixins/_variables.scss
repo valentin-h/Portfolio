@@ -1,0 +1,19 @@
+// dimensions
+$square-root-two: 1.414213;
+$outer-margin: 4vh;
+$projects-container-side: 100vh - 2 * $outer-margin;
+$inter-margin: $projects-container-side / 58;
+$side-margin: $projects-container-side / 21;
+
+$project-diagonal: ($projects-container-side - ($inter-margin * 2)) / 3;
+$project-side: $project-diagonal / $square-root-two;
+
+$position-first: $side-margin;
+$position-second: $side-margin + $project-diagonal + $inter-margin;
+$position-third: $side-margin + $project-diagonal * 2 + $inter-margin * 2;
+
+$position-first-half: $side-margin + $project-diagonal / 2 + $inter-margin / 2;
+$position-second-half: $side-margin + $project-diagonal * 1.5 + $inter-margin * 1.5;
+
+// colors
+$blue-dark: #012C44;

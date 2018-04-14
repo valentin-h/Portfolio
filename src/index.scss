@@ -1,16 +1,24 @@
+@import 'vendors/mixins/_variables.scss';
 @import 'vendors/mixins/_utilities.scss';
 
 html {
-  @include w-h;
+  @include w-h(100%, 100vh);
 }
 
 body {
   @include w-h;
   margin: 0;
   padding: 0;
+  background-color: $blue-dark;
 }
 
 #root {
   @include w-h;
   @include flex-column-center;
+}
+
+.projects--container {
+  position: relative;
+  @include w-h($projects-container-side);
+  background-color: red;
 }
