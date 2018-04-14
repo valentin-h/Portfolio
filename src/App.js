@@ -18,8 +18,9 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <div className="projects--container">
+        <div className="App--projects--container">
             {listProjects}
+            <div className="App--circle"></div>
         </div>
       </div>
     );

@@ -1,0 +1,15 @@
+@import 'vendors/mixins';
+@import 'vendors/variables';
+
+.App--projects--container {
+  position: relative;
+  @include w-h($projects-container-side);
+}
+
+.App--circle {
+  @include w-h(100%);
+  border-radius: $projects-container-side;
+  background-color: rgba(206, 255, 231, .4);
+  opacity: .5;
+  pointer-events: none;
+}

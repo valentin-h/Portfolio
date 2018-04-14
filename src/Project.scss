@@ -5,7 +5,10 @@
   position: absolute;
   @include w-h($project-side);
   transform: rotate(45deg);
+  background-color: $blue-dark;
   overflow: hidden;
+  z-index: 5;
+  border: 1px solid rgba($tonic, .1);
 
   &:nth-child(1) { @include top-left($position-first); }
   &:nth-child(2) { @include top-left($position-first, $position-second); }
@@ -20,16 +23,17 @@
   &:nth-child(11) { @include top-left($position-third, $position-second); }
   &:nth-child(12) { @include top-left($position-third); }
 }
-;
+
 .Project--image {
   position: absolute;
   @include top-left(-20%);
   @include w-h(140%);
   display: block;
   transform: rotate(-45deg);
-  opacity: .2;
+  opacity: .1;
   transition: opacity .2s ease-in-out;
   cursor: pointer;
+  z-index: 10;
 
   &:hover {
     opacity: 1;
