@@ -8,7 +8,6 @@
   background-color: $blue-dark;
   overflow: hidden;
   z-index: 5;
-  border: 1px solid rgba($tonic, .1);
 
   &:nth-child(1) { @include top-left($position-first); }
   &:nth-child(2) { @include top-left($position-first, $position-second); }

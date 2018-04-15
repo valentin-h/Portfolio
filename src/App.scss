@@ -1,3 +1,4 @@
+@import 'vendors/fonts';
 @import 'vendors/mixins';
 @import 'vendors/variables';
 
@@ -12,4 +13,43 @@
   background-color: rgba(206, 255, 231, .4);
   opacity: .5;
   pointer-events: none;
+}
+
+.App--center {
+  position: absolute;
+  @include top-left($position-second);
+  @include w-h($project-side);
+  background-color: $blue-dark;
+  z-index: 10;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+  border: .7vh solid $tonic;
+  transition: opacity, border .2s ease-in-out;
+
+  &:hover {
+    background-color: $tonic;
+    border-color: $blue-dark;
+  }
+}
+
+.App--title--container {
+  @include w-h;
+  @include flex-column-center;
+  transform: rotate(-45deg);
+  color: white;
+  text-transform: uppercase;
+
+  h1 {
+    font: 1.8vh 'open-sans-light', sans-serif;
+    letter-spacing: .2vh;
+    margin: 0;
+    color: $tonic;
+  }
+
+  h2 {
+    margin: .4vh 0 0;
+    font: 1.4vh 'open-sans-light', sans-serif;
+    letter-spacing: .1vh;
+    opacity: .7;
+  }
 }

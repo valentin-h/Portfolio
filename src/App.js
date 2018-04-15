@@ -20,6 +20,12 @@ class App extends React.Component {
       <div className="App">
         <div className="App--projects--container">
             {listProjects}
+            <div className="App--center">
+                <div className="App--title--container">
+                    <h1>Valentin Henry</h1>
+                    <h2>Front-end Developer</h2>
+                </div>
+            </div>
             <div className="App--circle"></div>
         </div>
       </div>
