@@ -8,9 +8,10 @@ import projects from './data/projects.js';
 import links from './data/links.js';
 
 import fontawesome from '@fortawesome/fontawesome'
+import solid from '@fortawesome/fontawesome-free-solid'
 import brands from '@fortawesome/fontawesome-free-brands'
 
-fontawesome.library.add(brands);
+fontawesome.library.add(brands, solid);
 
 class App extends React.Component {
     constructor(props) {

@@ -1,11 +1,21 @@
 const links = [
     {
+        key: 'envelope',
+        faType: 'fas',
+        url: 'mailto:valentin.henry91@gmail.com',
+        target: '_self'
+    },
+    {
         key: 'linkedin-in',
-        url: 'https://www.linkedin.com/in/valentinhenry/'
+        faType: 'fab',
+        url: 'https://www.linkedin.com/in/valentinhenry/',
+        target: '_blank'
     },
     {
         key: 'git',
-        url: 'http://www.github.com/valentin-h'
+        faType: 'fab',
+        url: 'http://www.github.com/valentin-h',
+        target: '_blank'
     }
 ];
 
