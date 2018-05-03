@@ -4,7 +4,7 @@ const links = [
         url: 'https://www.linkedin.com/in/valentinhenry/'
     },
     {
-        key: 'github',
+        key: 'git',
         url: 'http://www.github.com/valentin-h'
     }
 ];

@@ -5,8 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  margin: 0 0 0 8px;
+  margin: 0 0 0 6px;
   background-color: #ceffe7;
   border-radius: 32px;
   cursor: pointer;
@@ -18,8 +17,8 @@
     background-color: #012C44;
     color: #ceffe7; }
 
-.Link--icon.fa-linkedin-in {
+.Link--icon {
   font-size: 20px; }
-
-.Link--icon.fa-github {
-  font-size: 30px; }
+  .Link--icon.fa-linkedin-in {
+    font-size: 14px;
+    margin-bottom: 2px; }

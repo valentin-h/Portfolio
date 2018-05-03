@@ -42,6 +42,7 @@ class App extends React.Component {
                     <div className="App--circle"></div>
                 </div>
                 <div className="App--contact--container">
+
                     {listLinks}
                 </div>
             </div>
