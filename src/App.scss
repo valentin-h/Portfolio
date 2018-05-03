@@ -2,6 +2,11 @@
 @import 'vendors/mixins';
 @import 'vendors/variables';
 
+.App {
+  @include w-h;
+  @include flex-column-center;
+}
+
 .App--projects--container {
   position: relative;
   @include w-h($projects-container-side);
@@ -24,12 +29,6 @@
   transform: rotate(45deg);
   box-sizing: border-box;
   border: .7vh solid $tonic;
-  transition: opacity, border .2s ease-in-out;
-
-  &:hover {
-    background-color: $tonic;
-    border-color: $blue-dark;
-  }
 }
 
 .App--title--container {
@@ -52,4 +51,10 @@
     letter-spacing: .1vh;
     opacity: .7;
   }
+}
+
+.App--contact--container {
+  position: fixed;
+  @include flex-row-center;
+  @include bottom-right(10px);
 }

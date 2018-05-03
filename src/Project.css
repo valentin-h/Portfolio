@@ -1,0 +1,59 @@
+.Project {
+  position: absolute;
+  width: 20.02657vh;
+  height: 20.02657vh;
+  transform: rotate(45deg);
+  background-color: #012C44;
+  overflow: hidden;
+  z-index: 5; }
+  .Project:nth-child(1) {
+    top: 4.19048vh;
+    left: 4.19048vh; }
+  .Project:nth-child(2) {
+    top: 4.19048vh;
+    left: 34.02956vh; }
+  .Project:nth-child(3) {
+    top: 4.19048vh;
+    left: 63.86864vh; }
+  .Project:nth-child(4) {
+    top: 19.11002vh;
+    left: 19.11002vh; }
+  .Project:nth-child(5) {
+    top: 19.11002vh;
+    left: 48.9491vh; }
+  .Project:nth-child(6) {
+    top: 34.02956vh;
+    left: 4.19048vh; }
+  .Project:nth-child(7) {
+    top: 34.02956vh;
+    left: 63.86864vh; }
+  .Project:nth-child(8) {
+    top: 48.9491vh;
+    left: 19.11002vh; }
+  .Project:nth-child(9) {
+    top: 48.9491vh;
+    left: 48.9491vh; }
+  .Project:nth-child(10) {
+    top: 63.86864vh;
+    left: 4.19048vh; }
+  .Project:nth-child(11) {
+    top: 63.86864vh;
+    left: 34.02956vh; }
+  .Project:nth-child(12) {
+    top: 63.86864vh;
+    left: 63.86864vh; }
+
+.Project--image {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  display: block;
+  transform: rotate(-45deg);
+  opacity: .1;
+  transition: opacity .2s ease-in-out;
+  cursor: pointer;
+  z-index: 10; }
+  .Project--image:hover {
+    opacity: 1; }

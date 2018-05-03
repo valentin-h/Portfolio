@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'exo-light';
+  src: url("fonts/exo-light-webfont.eot");
+  src: url("fonts/exo-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/exo-light-webfont.woff2") format("woff2"), url("fonts/exo-light-webfont.woff") format("woff"), url("fonts/exo-light-webfont.ttf") format("truetype"), url("fonts/exo-light-webfont.svg#exolight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open-sans-light';
+  src: url("fonts/open-sans-light-webfont.eot");
+  src: url("fonts/open-sans-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans-light-webfont.woff") format("woff"), url("fonts/open-sans-light-webfont.ttf") format("truetype"), url("fonts/open-sans-light-webfont.svg#exolight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.App {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.App--projects--container {
+  position: relative;
+  width: 88vh;
+  height: 88vh; }
+
+.App--circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 88vh;
+  background-color: rgba(206, 255, 231, 0.4);
+  opacity: .5;
+  pointer-events: none; }
+
+.App--center {
+  position: absolute;
+  top: 34.02956vh;
+  left: 34.02956vh;
+  width: 20.02657vh;
+  height: 20.02657vh;
+  background-color: #012C44;
+  z-index: 10;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+  border: 0.7vh solid #ceffe7; }
+
+.App--title--container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-45deg);
+  color: white;
+  text-transform: uppercase; }
+  .App--title--container h1 {
+    font: 1.8vh 'open-sans-light', sans-serif;
+    letter-spacing: .2vh;
+    margin: 0;
+    color: #ceffe7; }
+  .App--title--container h2 {
+    margin: .4vh 0 0;
+    font: 1.4vh 'open-sans-light', sans-serif;
+    letter-spacing: .1vh;
+    opacity: .7; }
+
+.App--contact--container {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  bottom: 10px;
+  right: 10px; }

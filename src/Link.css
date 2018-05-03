@@ -1,0 +1,25 @@
+.Link {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 0 0 8px;
+  background-color: #ceffe7;
+  border-radius: 32px;
+  cursor: pointer;
+  color: #012C44;
+  transition: all .1s ease-in-out; }
+  .Link:link, .Link:visited {
+    color: #012C44; }
+  .Link:hover {
+    background-color: #012C44;
+    color: #ceffe7; }
+
+.Link--icon.fa-linkedin-in {
+  font-size: 20px; }
+
+.Link--icon.fa-github {
+  font-size: 30px; }
