@@ -8,19 +8,16 @@
   background-color: $blue-dark;
   overflow: hidden;
   z-index: 5;
+  backface-visibility: hidden;
 
-  &:nth-child(1) { @include top-left($position-first); }
-  &:nth-child(2) { @include top-left($position-first, $position-second); }
-  &:nth-child(3) { @include top-left($position-first, $position-third); }
-  &:nth-child(4) { @include top-left($position-first-half); }
-  &:nth-child(5) { @include top-left($position-first-half, $position-second-half); }
-  &:nth-child(6) { @include top-left($position-second, $position-first); }
-  &:nth-child(7) { @include top-left($position-second, $position-third); }
-  &:nth-child(8) { @include top-left($position-second-half, $position-first-half); }
-  &:nth-child(9) { @include top-left($position-second-half); }
-  &:nth-child(10) { @include top-left($position-third, $position-first); }
-  &:nth-child(11) { @include top-left($position-third, $position-second); }
-  &:nth-child(12) { @include top-left($position-third); }
+  &:nth-child(1) { @include top-left($position-first, $position-second); }
+  &:nth-child(2) { @include top-left($position-first-half); }
+  &:nth-child(3) { @include top-left($position-first-half, $position-second-half); }
+  &:nth-child(4) { @include top-left($position-second, $position-first); }
+  &:nth-child(5) { @include top-left($position-second, $position-third); }
+  &:nth-child(6) { @include top-left($position-second-half, $position-first-half); }
+  &:nth-child(7) { @include top-left($position-second-half); }
+  &:nth-child(8) { @include top-left($position-third, $position-second); }
 }
 
 .Project--image {
@@ -29,7 +26,7 @@
   @include w-h(140%);
   display: block;
   transform: rotate(-45deg);
-  opacity: .1;
+  opacity: .08;
   transition: opacity .2s ease-in-out;
   cursor: pointer;
   z-index: 10;

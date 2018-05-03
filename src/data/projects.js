@@ -15,17 +15,6 @@ const projects = [
   {
     display: false,
     highlights: false,
-    title: 'Le Point Rouge',
-    type: '<b>Type :</b> E-commerce',
-    tools: '<b>Tools : </b> Wordpress <b>•</b> WP E-Commerce <b>•</b> Isotope JS',
-    desc: '<b>Le Point Rouge</b> is an <b>e-commerce</b> website where you can buy <b>limited edition</b> works of art printed on t-shirts.<br/><br/>' +
-    'I developed it using <b>Wordpress</b> and an existing e-commerce plug-in.',
-    link: 'http://www.lepointrouge.eu/',
-    key: 'lpr',
-  },
-  {
-    display: false,
-    highlights: false,
     title: 'Deloitte',
     type: '<b>Type :</b> Responsive animation for desktop and tablet',
     tools: '<b>Tools :</b> jQuery <b>•</b> TweenMax <b>•</b> LESS',
@@ -33,39 +22,6 @@ const projects = [
     "I developed for them a <b>responsive animation</b> that aims to describe one of their service. There are <b>two layouts</b> for the animation depending on the user's device.",
     link: 'http://deloitte.valentinhenry.com/',
     key: 'deloitte',
-  },
-  {
-    display: false,
-    highlights: false,
-    title: 'Marie 3D',
-    type: '<b>Type :</b> Portfolio',
-    tools: '<b>Tools :</b> Wordpress <b>•</b> jQuery <b>•</b> LESS',
-    desc: '<b>Marie</b> is a <b>3D artist</b> working in the sector of video games.<br/><br/>' +
-    'I developed her personnal website using <b>Wordpress</b> and some <b>javascript librairies</b> for the front-end',
-    link: 'http://www.marie3d.com/',
-    key: 'marie',
-  },
-  {
-    display: false,
-    highlights: false,
-    title: 'Motospot',
-    type: '<b>Type :</b> Hybrid application',
-    tools: '<b>Tools :</b> AppGyver <b>•</b> Angular <b>•</b> LESS',
-    desc: '<b>Motospot</b> is a social network for <b>motorbikes lovers</b>.<br/><br/>' +
-    'I am currently working on a <b>cross-platform application</b> which provides a mobile <b>notification center</b> for the social network. Users can see their notifications and have <b>direct links</b> to functions.<br/><br/>App will be released soon on <b>Android</b> and <b>iOS<b/>.',
-    link: '',
-    key: 'motospot',
-  },
-  {
-    display: false,
-    highlights: false,
-    title: 'Céleste Bigo',
-    type: '<b>Type :</b> Portfolio',
-    tools: '<b>Tools :</b> jQuery <b>•</b> TweenMax <b>•</b> LESS',
-    desc: 'Céleste is a an <b>artistic director</b>. She now works in a french web agency.<br/><br/>' +
-    'I created her website <b>from scratch</b> using some <b>javascript librairies</b> for the front-end development.',
-    link: 'http://celeste-bigo.com/',
-    key: 'celeste',
   },
   {
     display: false,

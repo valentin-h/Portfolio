@@ -9,7 +9,7 @@ body {
   @include w-h;
   margin: 0;
   padding: 0;
-  background: radial-gradient(ellipse at center, #01365e 0%, $blue-dark 100%);
+  background: radial-gradient(ellipse at center, lighten($blue-dark, 10%) 0%, $blue-dark 100%);
 }
 
 #root {

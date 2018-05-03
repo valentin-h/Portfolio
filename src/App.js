@@ -17,6 +17,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            revert: false,
             projects: projects
         }
     }
@@ -30,9 +31,13 @@ class App extends React.Component {
             <Link key={link.key} link={link}/>
         );
 
+        setTimeout(() => {
+            this.setState({ revert: true })
+        }, 5000);
+
         return (
             <div className="App">
-                <div className="App--projects--container">
+                <div className={"App--projects--container " + (this.state.revert ? 'revert' : '')}>
                     {listProjects}
                     <div className="App--center">
                         <header className="App--title--container">
@@ -43,7 +48,6 @@ class App extends React.Component {
                     <div className="App--circle"></div>
                 </div>
                 <div className="App--contact--container">
-
                     {listLinks}
                 </div>
             </div>

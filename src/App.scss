@@ -10,12 +10,18 @@
 .App--projects--container {
   position: relative;
   @include w-h($projects-container-side);
+
+  &.revert .Project {
+    transition: all .8s ease-in-out;
+    //transform: rotateY(180deg);
+  }
 }
 
 .App--circle {
-  @include w-h(100%);
-  border-radius: $projects-container-side;
+  @include w-h(73%);
+  margin: 13.5%;
   background-color: rgba(206, 255, 231, .4);
+  transform: rotate(45deg);
   opacity: .5;
   pointer-events: none;
 }
