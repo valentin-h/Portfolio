@@ -1,7 +1,5 @@
 const projects = [
   {
-    display: false,
-    highlights: false,
     title: 'ExpoFrance',
     type: '<b>Type :</b> iPad Application and responsive website',
     tools: '<b>Tools :</b> AppGyver <b>•</b> Angular <b>•</b> LESS',
@@ -13,8 +11,6 @@ const projects = [
     key: 'expo',
   },
   {
-    display: false,
-    highlights: false,
     title: 'Deloitte',
     type: '<b>Type :</b> Responsive animation for desktop and tablet',
     tools: '<b>Tools :</b> jQuery <b>•</b> TweenMax <b>•</b> LESS',
@@ -24,8 +20,6 @@ const projects = [
     key: 'deloitte',
   },
   {
-    display: false,
-    highlights: false,
     title: 'Cours Toujours',
     type: '<b>Type :</b> Blog with e-commerce',
     tools: '<b>Tools :</b> Wordpress <b>•</b> WP E-commerce <b>•</b> jQuery',
@@ -35,8 +29,6 @@ const projects = [
     key: 'ctj',
   },
   {
-    display: false,
-    highlights: false,
     title: 'Youtube Covers',
     type: '<b>Type :</b> Video Editing',
     tools: '<b>Tools :</b> Cameras <b>•</b> Première <b>•</b> Music',
@@ -47,8 +39,6 @@ const projects = [
     key: 'covers',
   },
   {
-    display: false,
-    highlights: false,
     title: 'EmoShoot',
     type: '<b>Type :</b> Browser video game',
     tools: '<b>Tools :</b> Photoshop <b>•</b> jQuery <b>•</b> LESS',
@@ -60,8 +50,6 @@ const projects = [
     key: 'emo',
   },
   {
-    display: false,
-    highlights: false,
     title: 'Trigsys ARC',
     type: '<b>Type :</b> Corporate website',
     tools: '<b>Tools :</b> Wordpress <b>•</b> jQuery <b>•</b> LESS',
@@ -71,8 +59,6 @@ const projects = [
     key: 'arc',
   },
   {
-    display: false,
-    highlights: false,
     title: 'Breaking Wave',
     type: '<b>Type :</b> Graphic design and video editing',
     tools: '<b>Tools :</b> Photoshop <b>•</b> Illustrator <b>•</b> Première Pro',
@@ -83,8 +69,6 @@ const projects = [
     key: 'bw',
   },
   {
-    display: false,
-    highlights: false,
     title: 'Château de la Cormerais',
     type: '<b>Type :</b> Corporate website',
     tools: '<b>Tools :</b> Wordpress <b>•</b> jQuery <b>•</b> LESS',

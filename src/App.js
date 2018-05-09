@@ -11,10 +11,11 @@ import fontawesome from '@fortawesome/fontawesome'
 import solid from '@fortawesome/fontawesome-free-solid'
 import brands from '@fortawesome/fontawesome-free-brands'
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+
 fontawesome.library.add(brands, solid);
 
-const intervalTime = 2500;
-const initialTimeoutTime = 5000;
+const intervalTime = 3500;
 
 
 class App extends React.Component {
@@ -28,53 +29,67 @@ class App extends React.Component {
         };
 
         this.selectProject = this.selectProject.bind(this);
+        this.closeProject = this.closeProject.bind(this);
         this.highlightProject = this.highlightProject.bind(this);
     }
 
-    selectProject(key) {
+    selectProject(project) {
         this.setState({
             highlightedProject: undefined,
-            selectedProject: key
+            selectedProject: project
+        }, () => {
+            console.log(this.state.selectedProject.key)
         });
     }
 
-    getRandomProjectKey() {
-        let availableProjects = this.state.projects.filter((project) => { return project.key !== this.state.highlightedProject; });
-        let nextProjectKey = availableProjects[Math.floor(Math.random() * availableProjects.length)].key;
-        return (nextProjectKey);
+    getRandomProject() {
+        let availableProjects = this.state.projects.filter(project => { return project.key !== this.state.highlightedProject; });
+        return availableProjects[Math.floor(Math.random() * availableProjects.length)];
     }
 
-    highlightProject(key, recall = false) {
+    highlightProject(project, recall = false) {
         this.setState({
-            highlightedProject: key
+            highlightedProject: project
         }, () => {
             clearTimeout(this.state.highlightTimeout);
             if (recall && !this.state.selectedProject) {
                 this.setState({
-                    highlightTimeout: setTimeout(() => { this.highlightProject(this.getRandomProjectKey(), true) }, intervalTime)
+                    highlightTimeout: setTimeout(() => { this.highlightProject(this.getRandomProject(), true) }, intervalTime)
                 })
             }
         });
     }
 
-    componentDidMount() {
-        this.highlightProject(this.getRandomProjectKey(), true);
+    closeProject() {
+        this.setState({
+           selectedProject: undefined
+        });
+    }
+
+    getFollowingProject(variation) {
+        const currentProjectIndex = this.state.projects.findIndex(project => { return project.key === this.state.selectedProject.key });
+        let nextProjectIndex = currentProjectIndex + variation;
+        if (nextProjectIndex < 0) nextProjectIndex = this.state.projects.length - 1;
+        this.selectProject(this.state.projects[nextProjectIndex % this.state.projects.length]);
+    }
+
+    componentWillMount() {
+        this.highlightProject(this.getRandomProject(), true);
     }
 
     render() {
 
-        const projectsList = projects.map((project) =>
+        const projectsList = projects.map(project =>
             <Project
                 key={project.key}
                 select={this.selectProject}
                 highlight={this.highlightProject}
-                selectedProject={this.state.selectedProject}
                 highlightedProject={this.state.highlightedProject}
                 project={project}
             />
         );
 
-        const linksList = links.map((link) =>
+        const linksList = links.map(link =>
             <Link
                 key={link.key}
                 link={link}
@@ -84,7 +99,23 @@ class App extends React.Component {
         return (
             <div className="App">
                 <div className={"App--content--container " + (this.state.selectedProject ? 'displayed' : '')}>
-
+                    <div className="App--content--controls--container">
+                        <FontAwesomeIcon
+                            onClick={() => { this.getFollowingProject(-1)}}
+                            className="App--content--arrow"
+                            icon={['fas', 'arrow-left']}
+                        />
+                        <FontAwesomeIcon
+                            onClick={() => { this.getFollowingProject(1)}}
+                            className="App--content--arrow"
+                            icon={['fas', 'arrow-right']}
+                        />
+                        <FontAwesomeIcon
+                            className="App--content--close"
+                            onClick={this.closeProject}
+                            icon={['fas', 'times']}
+                        />
+                    </div>
                 </div>
                 <div className="App--projects--container">
                     {projectsList}

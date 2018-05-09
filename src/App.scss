@@ -15,11 +15,24 @@
   background-color: $blue-dark;
   z-index: 100;
   pointer-events: none;
-  transition: all .8s ease-in-out;
+  transition: all .6s ease-in-out;
 
   &.displayed {
     pointer-events: auto;
-    opacity: .8;
+    opacity: .95;
+  }
+}
+
+.App--content--controls--container {
+  position: absolute;
+  @include top-right(20px);
+  @include flex-row-center;
+  color: $tonic;
+  font-size: 22px;
+
+  svg {
+    margin-left: 12px;
+    cursor: pointer;
   }
 }
 

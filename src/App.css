@@ -30,10 +30,24 @@
   background-color: #012C44;
   z-index: 100;
   pointer-events: none;
-  transition: all .8s ease-in-out; }
+  transition: all .6s ease-in-out; }
   .App--content--container.displayed {
     pointer-events: auto;
-    opacity: .8; }
+    opacity: .95; }
+
+.App--content--controls--container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #ceffe7;
+  font-size: 22px; }
+  .App--content--controls--container svg {
+    margin-left: 12px;
+    cursor: pointer; }
 
 .App--projects--container {
   position: relative;

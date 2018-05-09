@@ -7,7 +7,7 @@ class Project extends Component {
       this.state = { project: {} };
   }
 
-  componentDidMount() {
+  componentWillMount() {
       const { project } = this.props;
       import(`./images/${project.key}.jpg`).then(image => {
         this.setState({ project: {...project, image: image } })
@@ -15,16 +15,17 @@ class Project extends Component {
   }
 
   isCurrentProject() {
-    return this.props.highlightedProject === this.state.project.key;
+      if (this.props.highlightedProject === undefined) return false;
+      return this.props.highlightedProject.key === this.state.project.key;
   }
 
   render() {
 
       return (
         <div
-            onMouseEnter={() => this.props.highlight(this.state.project.key)}
+            onMouseEnter={() => this.props.highlight(this.state.project)}
             onMouseLeave={() => this.props.highlight(undefined, true)}
-            onClick={() => this.props.select(this.state.project.key)}
+            onClick={() => this.props.select(this.state.project)}
             className="Project"
         >
             <img
