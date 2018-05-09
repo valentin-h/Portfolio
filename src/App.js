@@ -17,38 +17,54 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            revert: false,
+            selectedProject: undefined,
             projects: projects
-        }
+        };
+
+        this.selectProject = this.selectProject.bind(this)
+    }
+
+    selectProject(key) {
+        this.setState({
+            selectedProject: key
+        });
     }
 
     render() {
-        const listProjects = projects.map((project) =>
-            <Project key={project.key} project={project}/>
+
+        const projectsList = projects.map((project) =>
+            <Project
+                key={project.key}
+                selectedProject={this.state.selectedProject}
+                select={this.selectProject}
+                project={project}
+            />
         );
 
-        const listLinks = links.map((link) =>
-            <Link key={link.key} link={link}/>
+        const linksList = links.map((link) =>
+            <Link
+                key={link.key}
+                link={link}
+            />
         );
-
-        setTimeout(() => {
-            this.setState({ revert: true })
-        }, 5000);
 
         return (
             <div className="App">
-                <div className={"App--projects--container " + (this.state.revert ? 'revert' : '')}>
-                    {listProjects}
+                <div className={"App--content--container " + (this.state.selectedProject ? 'displayed' : '')}>
+
+                </div>
+                <div className="App--projects--container">
+                    {projectsList}
                     <div className="App--center">
                         <header className="App--title--container">
                             <h1>Valentin Henry</h1>
                             <h2>Front-end Developer</h2>
                         </header>
                     </div>
-                    <div className="App--circle"></div>
+                    <div className="App--background--shape"></div>
                 </div>
                 <div className="App--contact--container">
-                    {listLinks}
+                    {linksList}
                 </div>
             </div>
         );

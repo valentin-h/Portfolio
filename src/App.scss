@@ -1,23 +1,35 @@
-@import 'vendors/fonts';
-@import 'vendors/mixins';
-@import 'vendors/variables';
+@import 'stylesheets/fonts';
+@import 'stylesheets/mixins';
+@import 'stylesheets/variables';
 
 .App {
   @include w-h;
   @include flex-column-center;
 }
 
-.App--projects--container {
-  position: relative;
-  @include w-h($projects-container-side);
+.App--content--container {
+  position: fixed;
+  @include w-h;
+  @include top-left(-100%, 0);
+  opacity: 0;
+  background-color: $blue-dark;
+  z-index: 100;
+  pointer-events: none;
+  transition: all .8s ease-in-out;
 
-  &.revert .Project {
-    transition: all .8s ease-in-out;
-    //transform: rotateY(180deg);
+  &.displayed {
+    pointer-events: auto;
+    top: 0;
+    opacity: .8;
   }
 }
 
-.App--circle {
+.App--projects--container {
+  position: relative;
+  @include w-h($projects-container-side);
+}
+
+.App--background--shape {
   @include w-h(73%);
   margin: 13.5%;
   background-color: rgba(206, 255, 231, .4);

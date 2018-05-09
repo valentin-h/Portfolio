@@ -20,14 +20,28 @@
   justify-content: center;
   align-items: center; }
 
+.App--content--container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  opacity: 0;
+  background-color: #012C44;
+  z-index: 100;
+  pointer-events: none;
+  transition: all .8s ease-in-out; }
+  .App--content--container.displayed {
+    pointer-events: auto;
+    top: 0;
+    opacity: .8; }
+
 .App--projects--container {
   position: relative;
   width: 88vh;
   height: 88vh; }
-  .App--projects--container.revert .Project {
-    transition: all .8s ease-in-out; }
 
-.App--circle {
+.App--background--shape {
   width: 73%;
   height: 73%;
   margin: 13.5%;

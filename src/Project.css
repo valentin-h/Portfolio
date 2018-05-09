@@ -5,8 +5,7 @@
   transform: rotate(45deg);
   background-color: #012C44;
   overflow: hidden;
-  z-index: 5;
-  backface-visibility: hidden; }
+  z-index: 5; }
   .Project:nth-child(1) {
     top: 4.19048vh;
     left: 34.02956vh; }

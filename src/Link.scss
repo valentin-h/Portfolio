@@ -1,5 +1,5 @@
-@import 'vendors/mixins';
-@import 'vendors/variables';
+@import 'stylesheets/mixins';
+@import 'stylesheets/variables';
 
 .Link {
   @include w-h(32px);

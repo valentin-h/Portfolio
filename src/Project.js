@@ -10,14 +10,17 @@ class Project extends Component {
   componentDidMount() {
       const { project } = this.props;
       import(`./images/${project.key}.jpg`).then(image => {
-        this.setState({ project: { image: image } })
+        this.setState({ project: {...project, image: image } })
       });
   }
 
   render() {
       return (
-        <div className="Project">
-            <img className="Project--image" src={this.state.project.image} alt={this.state.project.name}/>
+        <div
+            onClick={() => this.props.select(this.state.project.key)}
+            className="Project"
+        >
+            <img className="Project--image" src={this.state.project.image} alt={this.state.project.key}/>
         </div>
       );
   }

@@ -1,5 +1,5 @@
-@import 'vendors/_variables';
-@import 'vendors/_mixins';
+@import 'stylesheets/_variables';
+@import 'stylesheets/_mixins';
 
 .Project {
   position: absolute;
@@ -8,7 +8,6 @@
   background-color: $blue-dark;
   overflow: hidden;
   z-index: 5;
-  backface-visibility: hidden;
 
   &:nth-child(1) { @include top-left($position-first, $position-second); }
   &:nth-child(2) { @include top-left($position-first-half); }
