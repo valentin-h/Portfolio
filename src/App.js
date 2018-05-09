@@ -13,6 +13,10 @@ import brands from '@fortawesome/fontawesome-free-brands'
 
 fontawesome.library.add(brands, solid);
 
+const intervalTime = 2000;
+const initialTimeoutTime = 5000;
+
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -47,12 +51,15 @@ class App extends React.Component {
             clearTimeout(this.state.highlightTimeout);
             if (recall && !this.state.selectedProject) {
                 this.setState({
-                    highlightTimeout: setTimeout(() => { this.highlightProject(this.getRandomProjectKey(), true) }, 2000)
+                    highlightTimeout: setTimeout(() => { this.highlightProject(this.getRandomProjectKey(), true) }, intervalTime)
                 })
             }
         });
     }
 
+    componentDidMount() {
+        setTimeout(() => { this.highlightProject(this.getRandomProjectKey(), true) }, initialTimeoutTime);
+    }
 
     render() {
 
