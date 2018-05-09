@@ -13,7 +13,7 @@ import brands from '@fortawesome/fontawesome-free-brands'
 
 fontawesome.library.add(brands, solid);
 
-const intervalTime = 2000;
+const intervalTime = 2500;
 const initialTimeoutTime = 5000;
 
 
@@ -58,7 +58,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => { this.highlightProject(this.getRandomProjectKey(), true) }, initialTimeoutTime);
+        this.highlightProject(this.getRandomProjectKey(), true);
     }
 
     render() {
