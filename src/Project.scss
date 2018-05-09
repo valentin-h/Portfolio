@@ -26,11 +26,11 @@
   display: block;
   transform: rotate(-45deg);
   opacity: .08;
-  transition: opacity .2s ease-in-out;
+  transition: opacity .3s ease-in-out;
   cursor: pointer;
   z-index: 10;
 
-  &:hover {
+  &.highlighted {
     opacity: 1;
   }
 }

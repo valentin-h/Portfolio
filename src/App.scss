@@ -10,7 +10,7 @@
 .App--content--container {
   position: fixed;
   @include w-h;
-  @include top-left(-100%, 0);
+  @include top-left;
   opacity: 0;
   background-color: $blue-dark;
   z-index: 100;
@@ -19,7 +19,6 @@
 
   &.displayed {
     pointer-events: auto;
-    top: 0;
     opacity: .8;
   }
 }

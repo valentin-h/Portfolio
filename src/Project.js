@@ -14,13 +14,24 @@ class Project extends Component {
       });
   }
 
+  isCurrentProject() {
+    return this.props.highlightedProject === this.state.project.key;
+  }
+
   render() {
+
       return (
         <div
+            onMouseEnter={() => this.props.highlight(this.state.project.key)}
+            onMouseLeave={() => this.props.highlight(undefined, true)}
             onClick={() => this.props.select(this.state.project.key)}
             className="Project"
         >
-            <img className="Project--image" src={this.state.project.image} alt={this.state.project.key}/>
+            <img
+                className={"Project--image " + (this.isCurrentProject() ? 'highlighted' : '')}
+                src={this.state.project.image}
+                alt={this.state.project.key}
+            />
         </div>
       );
   }

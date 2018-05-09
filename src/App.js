@@ -18,25 +18,51 @@ class App extends React.Component {
         super(props);
         this.state = {
             selectedProject: undefined,
+            highlightTimeout: undefined,
+            highlightedProject: undefined,
             projects: projects
         };
 
-        this.selectProject = this.selectProject.bind(this)
+        this.selectProject = this.selectProject.bind(this);
+        this.highlightProject = this.highlightProject.bind(this);
     }
 
     selectProject(key) {
         this.setState({
+            highlightedProject: undefined,
             selectedProject: key
         });
     }
+
+    getRandomProjectKey() {
+        let availableProjects = this.state.projects.filter((project) => { return project.key !== this.state.highlightedProject; });
+        let nextProjectKey = availableProjects[Math.floor(Math.random() * availableProjects.length)].key;
+        return (nextProjectKey);
+    }
+
+    highlightProject(key, recall = false) {
+        this.setState({
+            highlightedProject: key
+        }, () => {
+            clearTimeout(this.state.highlightTimeout);
+            if (recall && !this.state.selectedProject) {
+                this.setState({
+                    highlightTimeout: setTimeout(() => { this.highlightProject(this.getRandomProjectKey(), true) }, 2000)
+                })
+            }
+        });
+    }
+
 
     render() {
 
         const projectsList = projects.map((project) =>
             <Project
                 key={project.key}
-                selectedProject={this.state.selectedProject}
                 select={this.selectProject}
+                highlight={this.highlightProject}
+                selectedProject={this.state.selectedProject}
+                highlightedProject={this.state.highlightedProject}
                 project={project}
             />
         );
