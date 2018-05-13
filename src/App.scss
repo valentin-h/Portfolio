@@ -11,6 +11,7 @@
   position: fixed;
   @include w-h;
   @include top-left;
+  @include flex-column-center;
   opacity: 0;
   background-color: $blue-dark;
   z-index: 100;
@@ -19,7 +20,9 @@
 
   &.displayed {
     pointer-events: auto;
-    opacity: .95;
+    opacity: .98;
+
+    .App--content--project { opacity: 1; }
   }
 }
 
@@ -33,6 +36,73 @@
   svg {
     margin-left: 12px;
     cursor: pointer;
+  }
+}
+
+.App--content--project {
+  @include w-h($projects-container-side);
+  @include flex-column-bottom;
+  font-family: open-sans-light, sans-serif;
+  color: $tonic;
+  user-select: none;
+  opacity: 0;
+  transition: all .6s ease-in-out;
+  background-color: rgba($tonic, .05);
+  border-radius: $projects-container-side;
+  overflow: hidden;
+
+  .App--content--project--title {
+    font-size: 28px;
+    margin: 0 0 24px;
+    max-width: 50%;
+    text-align: center;
+  }
+
+  .App--content--project--type {
+    font-size: 14px;
+    font-style: italic;
+    margin: 0 0 2px;
+  }
+
+  .App--content--project--tools {
+    font-size: 14px;
+    margin: 0 0 24px;
+  }
+
+  .App--content--project--description {
+    font-size: 14px;
+    text-align: center;
+    margin: 0 32px;
+    max-width: 75%;
+  }
+
+  .App--content--project--image--container {
+    width: 100%;
+    height: 43%;
+    @include flex-row-center;
+    margin: 24px 0 0;
+    overflow: hidden;
+    align-self: flex-end;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .App--content--project--link {
+    color: $tonic;
+    border: 1px solid $tonic;
+    padding: 8px 16px;
+    font: 14px open-sans-light, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    margin: 24px 0 0;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background-color: $tonic;
+      color: $blue-dark;
+    }
   }
 }
 
