@@ -30,8 +30,7 @@ const projects = [
     title: 'Youtube Covers',
     type: 'Video Editing',
     tools: 'Cameras • Première • Music',
-    desc: 'Whenever I have free time, I want to make <b>music</b>.<br/>' +
-    'I created in 2013 a <b>Youtube channel</b> where I post some <b>drums and piano</b> covers. It allows me to <b>combine</b> video editing and music. I use <b>several cameras</b> to film, then I edit video on <b>Première Pro</b>.<br/>',
+    desc: 'I created in 2013 a <b>Youtube channel</b> where I post some <b>drums and piano</b> covers. It allows me to <b>combine</b> video editing and music. I use <b>several cameras</b> to film, then I edit video on <b>Première Pro</b>.<br/>',
     link: 'https://www.youtube.com/channel/UCEvX6TGqYCavo3DeEtgmOCA',
     key: 'covers',
   },

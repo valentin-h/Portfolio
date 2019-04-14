@@ -4,14 +4,17 @@
 
 .App {
   @include w-h;
-  @include flex-column-center;
+  @include flex-column-between;
+
+  @media screen and (min-width: $laptop) {
+    @include flex-column-center;
+  }
 }
 
 .App--content--container {
   position: fixed;
   @include w-h;
   @include top-left;
-  @include flex-column-center;
   opacity: 0;
   background-color: $blue-dark;
   z-index: 100;
@@ -24,11 +27,16 @@
 
     .App--content--project { opacity: 1; }
   }
+
+  @media screen and (min-width: $laptop) {
+    @include flex-column-center;
+  }
 }
 
 .App--content--controls--container {
   position: absolute;
-  @include top-right(20px);
+  @include top-right($outer-margin-mobile);
+
   @include flex-row-center;
   color: $tonic;
   font-size: 22px;
@@ -37,43 +45,69 @@
     margin-left: 12px;
     cursor: pointer;
   }
+
+  @media screen and (min-width: $laptop) {
+    @include top-right(20px);
+  }
 }
 
 .App--content--project {
-  @include w-h($projects-container-side);
-  @include flex-column-bottom;
+  @include w-h($projects-container-width-mobile, auto);
   font-family: open-sans-light, sans-serif;
   color: $tonic;
   user-select: none;
   opacity: 0;
   transition: all .6s ease-in-out;
   background-color: rgba($tonic, .05);
-  border-radius: $projects-container-side;
-  overflow: hidden;
+  margin: calc(2 * #{$outer-margin-mobile} + 1em) auto 0;
+  overflow: auto;
+  flex-shrink: 0;
+  max-height: calc(100% - (3 * #{$outer-margin-mobile}) - 1em);
+  text-align: center;
+
+  @media screen and (min-width: $laptop) {
+    @include w-h($projects-container-side);
+    @include flex-column-bottom;
+    border-radius: $projects-container-side;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    max-height: none;
+  }
 
   .App--content--project--title {
     font-size: 28px;
-    margin: 0 0 24px;
+    margin: $outer-margin-mobile auto 24px;
     max-width: 50%;
     text-align: center;
+
+    @media screen and (min-width: $laptop) {
+      margin: 0 0 24px;
+    }
   }
 
   .App--content--project--type {
     font-size: 14px;
     font-style: italic;
     margin: 0 0 2px;
+    text-align: center;
   }
 
   .App--content--project--tools {
     font-size: 14px;
     margin: 0 0 24px;
+    text-align: center;
   }
 
   .App--content--project--description {
     font-size: 14px;
     text-align: center;
-    margin: 0 32px;
-    max-width: 75%;
+    margin: 0 $outer-margin-mobile;
+
+    @media screen and (min-width: $laptop) {
+      margin: 0 32px;
+      max-width: 75%;
+    }
   }
 
   .App--content--project--image--container {
@@ -90,6 +124,7 @@
   }
 
   .App--content--project--link {
+    display: inline-block;
     color: $tonic;
     border: 1px solid $tonic;
     padding: 8px 16px;
@@ -107,54 +142,107 @@
 }
 
 .App--projects--container {
-  position: relative;
-  @include w-h($projects-container-side);
+  @include w-h(auto);
+  padding: $outer-margin-mobile $outer-margin-mobile 0;
+  @include flex-row-between-start;
+  flex-wrap: wrap;
+  overflow-y: auto;
+
+  @media screen and (min-width: $tablet) {
+    padding: $outer-margin-tablet $outer-margin-tablet 0;
+  }
+
+  @media screen and (min-width: $laptop) {
+    position: relative;
+    @include w-h($projects-container-side);
+    padding: 0;
+    overflow: visible;
+    flex-wrap: nowrap;
+  }
 }
 
 .App--background--shape {
-  @include w-h(73%);
-  margin: 13.5%;
-  background-color: rgba(206, 255, 231, .4);
-  transform: rotate(45deg);
-  opacity: .5;
-  pointer-events: none;
+  display: none;
+
+  @media screen and (min-width: $laptop) {
+    display: block;
+    @include w-h(73%);
+    margin: 13.5%;
+    background-color: rgba(206, 255, 231, .4);
+    transform: rotate(45deg);
+    opacity: .5;
+    pointer-events: none;
+  }
 }
 
 .App--center {
-  position: absolute;
-  @include top-left($position-second);
-  @include w-h($project-side);
-  background-color: $blue-dark;
-  z-index: 10;
-  transform: rotate(45deg);
-  box-sizing: border-box;
-  border: .7vh solid $tonic;
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    @include w-h($project-side-tablet);
+    transform: rotate(0deg);
+    position: static;
+    background-color: $blue-dark;
+    box-sizing: border-box;
+    border: .7vh solid $tonic;
+  }
+
+  @media screen and (min-width: $laptop) {
+    position: absolute;
+    @include top-left($position-second);
+    @include w-h($project-side);
+    z-index: 10;
+    transform: rotate(45deg);
+  }
 }
 
 .App--title--container {
+  transform: rotate(0deg);
   @include w-h;
   @include flex-column-center;
-  transform: rotate(-45deg);
   color: white;
   text-transform: uppercase;
 
+  @media screen and (min-width: $laptop) {
+    transform: rotate(-45deg);
+  }
+
   h1 {
-    font: 1.8vh 'open-sans-light', sans-serif;
+    font: 2vw 'open-sans-light', sans-serif;
     letter-spacing: .2vh;
     margin: 0;
     color: $tonic;
+
+    @media screen and (min-width: $laptop) {
+      font-size: 1.8vh;
+    }
   }
 
   h2 {
     margin: .4vh 0 0;
-    font: 1.4vh 'open-sans-light', sans-serif;
+    font: 1.5vw 'open-sans-light', sans-serif;
     letter-spacing: .1vh;
     opacity: .7;
+
+    @media screen and (min-width: $laptop) {
+      font-size: 1.4vh;
+    }
   }
 }
 
 .App--contact--container {
-  position: fixed;
+  position: static;
   @include flex-row-center;
-  @include bottom-right(10px);
+  padding: $outer-margin-mobile 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: $outer-margin-tablet 0;
+  }
+
+  @media screen and (min-width: $laptop) {
+    position: fixed;
+    @include bottom-right(10px);
+    padding: 0;
+  }
 }

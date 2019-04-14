@@ -1,7 +1,9 @@
 // dimensions
 $square-root-two: 1.414213;
+
 $outer-margin: 6vh;
 $projects-container-side: 100vh - 2 * $outer-margin;
+
 $inter-margin: $projects-container-side / 58;
 $side-margin: $projects-container-side / 21;
 
@@ -14,6 +16,19 @@ $position-third: $side-margin + $project-diagonal * 2 + $inter-margin * 2;
 
 $position-first-half: $side-margin + $project-diagonal / 2 + $inter-margin / 2;
 $position-second-half: $side-margin + $project-diagonal * 1.5 + $inter-margin * 1.5;
+
+$outer-margin-mobile: 5vw;
+$projects-container-width-mobile: 100vw - (2 * $outer-margin-mobile);
+$project-side-mobile: ($projects-container-width-mobile - $outer-margin-mobile) / 2;
+
+$outer-margin-tablet: 3vw;
+$projects-container-width-tablet: 100vw - (3 * $outer-margin-tablet);
+$project-side-tablet: ($projects-container-width-tablet - $outer-margin-tablet) / 3;
+
+// breakpoints
+
+$tablet: 425px;
+$laptop: 1280px;
 
 // colors
 $blue-dark: #012C44;

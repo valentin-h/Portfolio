@@ -1,47 +1,68 @@
 .Project {
-  position: absolute;
-  width: 20.02657vh;
-  height: 20.02657vh;
-  transform: rotate(45deg);
-  background-color: #012C44;
-  overflow: hidden;
-  z-index: 5; }
-  .Project:nth-child(1) {
-    top: 4.19048vh;
-    left: 34.02956vh; }
-  .Project:nth-child(2) {
-    top: 19.11002vh;
-    left: 19.11002vh; }
-  .Project:nth-child(3) {
-    top: 19.11002vh;
-    left: 48.9491vh; }
-  .Project:nth-child(4) {
-    top: 34.02956vh;
-    left: 4.19048vh; }
-  .Project:nth-child(5) {
-    top: 34.02956vh;
-    left: 63.86864vh; }
-  .Project:nth-child(6) {
-    top: 48.9491vh;
-    left: 19.11002vh; }
-  .Project:nth-child(7) {
-    top: 48.9491vh;
-    left: 48.9491vh; }
-  .Project:nth-child(8) {
-    top: 63.86864vh;
-    left: 34.02956vh; }
+  position: static;
+  transform: rotate(0deg);
+  width: 42.5vw;
+  height: 42.5vw;
+  margin: 0 0 5vw;
+  overflow: hidden; }
+  .Project:nth-child(7), .Project:nth-child(8) {
+    margin-bottom: 0; }
+  @media screen and (min-width: 425px) {
+    .Project {
+      width: 29.33333vw;
+      height: 29.33333vw;
+      margin: 0 0 3vw; } }
+  @media screen and (min-width: 1280px) {
+    .Project {
+      position: absolute;
+      width: 20.02657vh;
+      height: 20.02657vh;
+      transform: rotate(45deg);
+      background-color: #012C44;
+      z-index: 5; }
+      .Project:nth-child(1) {
+        top: 4.19048vh;
+        left: 34.02956vh; }
+      .Project:nth-child(2) {
+        top: 19.11002vh;
+        left: 19.11002vh; }
+      .Project:nth-child(3) {
+        top: 19.11002vh;
+        left: 48.9491vh; }
+      .Project:nth-child(4) {
+        top: 34.02956vh;
+        left: 4.19048vh; }
+      .Project:nth-child(5) {
+        top: 34.02956vh;
+        left: 63.86864vh; }
+      .Project:nth-child(6) {
+        top: 48.9491vh;
+        left: 19.11002vh; }
+      .Project:nth-child(7) {
+        top: 48.9491vh;
+        left: 48.9491vh; }
+      .Project:nth-child(8) {
+        top: 63.86864vh;
+        left: 34.02956vh; } }
 
 .Project--image {
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  display: block;
-  transform: rotate(-45deg);
-  opacity: .08;
-  transition: opacity .3s ease-in-out;
-  cursor: pointer;
-  z-index: 10; }
+  transform: rotate(0deg);
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+  position: static; }
   .Project--image.highlighted {
     opacity: 1; }
+  @media screen and (min-width: 1280px) {
+    .Project--image {
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      display: block;
+      transform: rotate(-45deg);
+      opacity: .08;
+      transition: opacity .3s ease-in-out;
+      cursor: pointer;
+      z-index: 10; } }

@@ -2,35 +2,59 @@
 @import 'stylesheets/_mixins';
 
 .Project {
-  position: absolute;
-  @include w-h($project-side);
-  transform: rotate(45deg);
-  background-color: $blue-dark;
+  position: static;
+  transform: rotate(0deg);
+  @include w-h($project-side-mobile);
+  margin: 0 0 $outer-margin-mobile;
   overflow: hidden;
-  z-index: 5;
 
-  &:nth-child(1) { @include top-left($position-first, $position-second); }
-  &:nth-child(2) { @include top-left($position-first-half); }
-  &:nth-child(3) { @include top-left($position-first-half, $position-second-half); }
-  &:nth-child(4) { @include top-left($position-second, $position-first); }
-  &:nth-child(5) { @include top-left($position-second, $position-third); }
-  &:nth-child(6) { @include top-left($position-second-half, $position-first-half); }
-  &:nth-child(7) { @include top-left($position-second-half); }
-  &:nth-child(8) { @include top-left($position-third, $position-second); }
+  &:nth-child(7),
+  &:nth-child(8) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $tablet) {
+    @include w-h($project-side-tablet);
+    margin: 0 0 $outer-margin-tablet;
+  }
+
+  @media screen and (min-width: $laptop) {
+    position: absolute;
+    @include w-h($project-side);
+    transform: rotate(45deg);
+    background-color: $blue-dark;
+    z-index: 5;
+
+    &:nth-child(1) { @include top-left($position-first, $position-second); }
+    &:nth-child(2) { @include top-left($position-first-half); }
+    &:nth-child(3) { @include top-left($position-first-half, $position-second-half); }
+    &:nth-child(4) { @include top-left($position-second, $position-first); }
+    &:nth-child(5) { @include top-left($position-second, $position-third); }
+    &:nth-child(6) { @include top-left($position-second-half, $position-first-half); }
+    &:nth-child(7) { @include top-left($position-second-half); }
+    &:nth-child(8) { @include top-left($position-third, $position-second); }
+  }
 }
 
 .Project--image {
-  position: absolute;
-  @include top-left(-20%);
-  @include w-h(140%);
-  display: block;
-  transform: rotate(-45deg);
-  opacity: .08;
-  transition: opacity .3s ease-in-out;
-  cursor: pointer;
-  z-index: 10;
+  transform: rotate(0deg);
+  opacity: .5;
+  @include w-h(100%);
+  position: static;
 
   &.highlighted {
     opacity: 1;
+  }
+
+  @media screen and (min-width: $laptop) {
+    position: absolute;
+    @include top-left(-20%);
+    @include w-h(140%);
+    display: block;
+    transform: rotate(-45deg);
+    opacity: .08;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+    z-index: 10;
   }
 }

@@ -146,10 +146,10 @@ class App extends React.Component {
                 <div className="App--projects--container">
                     {projectsList}
                     <div className="App--center">
-                        <header className="App--title--container">
+                        <div className="App--title--container">
                             <h1>Valentin Henry</h1>
                             <h2>Front-end Developer</h2>
-                        </header>
+                        </div>
                     </div>
                     <div className="App--background--shape"/>
                 </div>
